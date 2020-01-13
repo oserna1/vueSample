@@ -50,23 +50,45 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="424f455f-dfbe-49be-af55-2a097ebd0542" name="Default Changelist" comment="" />
+      <changelist id="26c1f13d-af12-42eb-91fc-e89e8bd2217e" name="Default Changelist" comment="" />
       <created>1578890921757</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1578890921757</updated>
       <workItem from="1578890924026" duration="652000" />
       <workItem from="1578892887077" duration="2713000" />
+      <workItem from="1578935845031" duration="3262000" />
     </task>
+    <task id="LOCAL-00001" summary="completed intro course: need to work on last challenge">
+      <created>1578935734401</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1578935734401</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="completed intro course: need to work on last challenge" />
+    <option name="LAST_COMMIT_MESSAGE" value="completed intro course: need to work on last challenge" />
+  </component>
   <component name="WindowStateProjectService">
-    <state x="440" y="260" key="Vcs.Push.Dialog.v2" timestamp="1578896127939">
-      <screen x="0" y="0" width="1680" height="1050" />
+    <state x="640" y="255" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1578935774397">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
+    <state x="640" y="255" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/-1920.11.1536.832/-3600.32.1680.1010/0.0.1920.1040@0.0.1920.1040" timestamp="1578935774397" />
+    <state x="583" y="27" key="CommitChangelistDialog2" timestamp="1578935733081">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="583" y="27" key="CommitChangelistDialog2/-1920.11.1536.832/-3600.32.1680.1010/0.0.1920.1040@0.0.1920.1040" timestamp="1578935733081" />
+    <state x="503" y="258" key="Vcs.Push.Dialog.v2" timestamp="1578935757317">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="503" y="258" key="Vcs.Push.Dialog.v2/-1920.11.1536.832/-3600.32.1680.1010/0.0.1920.1040@0.0.1920.1040" timestamp="1578935757317" />
     <state x="440" y="260" key="Vcs.Push.Dialog.v2/0.0.1680.1050@0.0.1680.1050" timestamp="1578896127939" />
     <state x="643" y="184" key="VcsDiffUtil.ChangesDialog" timestamp="1578896107841">
       <screen x="0" y="0" width="1680" height="1050" />

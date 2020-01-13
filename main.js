@@ -1,19 +1,5 @@
 var eventBus = new Vue()
 
-Vue.component('product-details', {
-    props: {
-        details: {
-            type: Array,
-            required: true
-        }
-    },
-    template: `
-        <ul>
-            <li v-for="detail in details">{{detail}}</li>
-        </ul>
-    `
-})
-
 Vue.component('product', {
     props: {
         premium: {
@@ -30,7 +16,8 @@ Vue.component('product', {
                 <h1>{{title}}</h1>
                 <p>{{product}} are like gloves for your feets </p>
                 <p v-if="onSale">{{onSaleMessage}}</p>
-                <product-details :details="details"></product-details>
+                
+                <info-tabs :shipping="shipping" :details="details"></info-tabs>
                 
                 <div v-for="(variant, index) in variants"
                      :key="variant.variantId"
@@ -48,7 +35,6 @@ Vue.component('product', {
                 <p v-else-if="inStock<=10 && inStock > 0">Almost Sold Out!</p>
                 <p v-else :class="{lineThrough: true}">Out of Stock</p>
                 <p v-if="onSale">On Sale!</p>
-                <p>Shipping {{ shipping }}</p>
                 <a :href="link"> Go to vue.js homepage</a>
 
                 <button @click="addToCart"
@@ -92,11 +78,9 @@ Vue.component('product', {
     methods: {
         addToCart: function () {
             this.$emit('add-to-cart', this.variants[this.selectedVariant].variantId);
-            this.variants[this.selectedVariant].variantQuantity--;
         },
         removeFromCart: function () {
             this.$emit('remove-from-cart', this.variants[this.selectedVariant].variantId);
-            this.variants[this.selectedVariant].variantQuantity++;
         },
         updateProduct: function (index) {
             this.selectedVariant = index;
@@ -244,6 +228,48 @@ Vue.component('product-tabs', {
         return {
             tabs: ['Reviews', 'Make a Review'],
             selectedTab: 'Reviews'
+        }
+    }
+})
+
+Vue.component('info-tabs', {
+    props: {
+        shipping: {
+            required: true
+        },
+        details: {
+            type: Array,
+            required: true
+        }
+    },
+    template: `
+      <div>
+      
+        <ul>
+          <span class="tabs" 
+                :class="{ activeTab: selectedTab === tab }"
+                v-for="(tab, index) in tabs"
+                @click="selectedTab = tab"
+                :key="tab"
+          >{{ tab }}</span>
+        </ul>
+
+        <div v-show="selectedTab === 'Shipping'">
+          <p>{{ shipping }}</p>
+        </div>
+
+        <div v-show="selectedTab === 'Details'">
+          <ul>
+            <li v-for="detail in details">{{ detail }}</li>
+          </ul>
+        </div>
+    
+      </div>
+    `,
+    data() {
+        return {
+            tabs: ['Shipping', 'Details'],
+            selectedTab: 'Shipping'
         }
     }
 })
