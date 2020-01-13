@@ -52,12 +52,7 @@ Vue.component('product', {
                 <button @click="addToCart"
                         :disabled="inStock<1"
                         :class="{ disabledButton: inStock<1}">Add to Cart</button>
-                <button @click="removeFromCart"
-                        :disabled="cart<1"
-                        :class="{ disabledButton: cart<1}">Remove from Cart</button>
-                <div class="cart">
-                    <p>Cart({{cart}})</p>
-                </div>
+                <button @click="removeFromCart">Remove from Cart</button>
             </div>
 
 
@@ -85,24 +80,21 @@ Vue.component('product', {
                     variantQuantity: 5
                 }
             ],
-            sizes: ["small", "medium", "large"],
-            cart: 0
+            sizes: ["small", "medium", "large"]
 
         }
     },
     methods: {
         addToCart: function (){
-            this.cart++;
+            this.$emit('add-to-cart', this.variants[this.selectedVariant].variantId);
             this.variants[this.selectedVariant].variantQuantity--;
+        },
+        removeFromCart: function(){
+            this.$emit('remove-from-cart', this.variants[this.selectedVariant].variantId);
+            this.variants[this.selectedVariant].variantQuantity++;
         },
         updateProduct: function(index){
             this.selectedVariant = index;
-        },
-        removeFromCart() {
-            if (this.cart > 0){
-                this.cart--;
-                this.variants[this.selectedVariant].variantQuantity++;
-            }
         }
     },
     computed: {
@@ -131,6 +123,18 @@ Vue.component('product', {
 var app = new Vue({
     el: '#app',
     data: {
-        premium: true
+        premium: true,
+        cart: []
+    },
+    methods: {
+        updateCart(id){
+            this.cart.push(id);
+        },
+        removeProduct(id){
+            const index = this.cart.indexOf(id);
+            if (index > -1) {
+                this.cart.splice(index,1);
+            }
+        }
     }
 })
