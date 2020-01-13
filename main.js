@@ -26,7 +26,7 @@ Vue.component('product', {
             </div>
             <div class="product-info">
                 <h1>{{title}}</h1>
-                <p>{{product}} are like gloves for your feet </p>
+                <p>{{product}} are like gloves for your feets </p>
                 <p v-if="onSale">{{onSaleMessage}}</p>
                 <product-details :details="details"></product-details>
                 
